@@ -32,6 +32,9 @@ addBtn.addEventListener('click', (e) => {
     createNewNote();
     form.reset();
     inp.focus();
+    const foo = [1,2,3];
+    const[n] = foo;
+    console.log(n);
 });
 
 
@@ -42,8 +45,7 @@ function Input(){
     return(
         <div className="input"> 
             <form className="form">
-                <label htmlFor="notes">Notes</label>
-                <input className="inp" id="notes" type="text"  placeholder="Add new note" autoFocus/>
+                <input className="inp" size='50' type="text"  placeholder="Add new note" autoFocus/>
                 <button type="submit" className="addBtn">Add Note</button>
             </form>
         </div>
