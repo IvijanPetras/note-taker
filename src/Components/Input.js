@@ -5,6 +5,7 @@ window.onload = function(){
 let container = document.querySelector('.card-container');
 let addBtn = document.querySelector('.addBtn');
 let inp = document.querySelector('.inp');
+let form = document.querySelector('.form');
 
 function valueFetch(e){
     const val = e.value;
@@ -21,7 +22,6 @@ function createCard(){
 
 function createNewNote(){
     var nc = createCard();
-    
     container.append(nc);
 }
 
@@ -29,11 +29,9 @@ function createNewNote(){
 
 addBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    var card = document.createElement('div');
-    card.innerText = inp.value;
-    container.append(card);
-    inp = "";
-    
+    createNewNote();
+    form.reset();
+    inp.focus();
 });
 
 
@@ -43,9 +41,9 @@ addBtn.addEventListener('click', (e) => {
 function Input(){
     return(
         <div className="input"> 
-            <form>
+            <form className="form">
                 <label htmlFor="notes">Notes</label>
-                <input className="inp" id="notes" type="text" name="notes" placeholder="Add new note" autoFocus/>
+                <input className="inp" id="notes" type="text"  placeholder="Add new note" autoFocus/>
                 <button type="submit" className="addBtn">Add Note</button>
             </form>
         </div>
